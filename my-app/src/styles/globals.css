@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+/* Tailwind v4 design tokens */
+@theme {
+  /* Brand-only CSS variables (not Tailwind tokens) */
+  --color-primary-start: #5B6CFF;
+  --color-primary-mid: #7F7FD5;
+  --color-primary-end: #FF8A00;
+
+  /* Base Colors (HSL values as required by Tailwind v4 tokens) */
+  --color-background: 0 0% 100%;
+  --color-foreground: 240 10% 3.9%;
+
+  --color-card: 0 0% 100%;
+  --color-card-foreground: 240 10% 3.9%;
+
+  --color-popover: 0 0% 100%;
+  --color-popover-foreground: 240 10% 3.9%;
+
+  /* Primary approximates #5B6CFF */
+  --color-primary: 234 100% 68%;
+  --color-primary-foreground: 0 0% 100%;
+
+  --color-secondary: 240 4.8% 95.9%;
+  --color-secondary-foreground: 240 5.9% 10%;
+
+  --color-muted: 240 4.8% 95.9%;
+  --color-muted-foreground: 240 3.8% 46.1%;
+
+  --color-accent: 240 4.8% 95.9%;
+  --color-accent-foreground: 240 5.9% 10%;
+
+  --color-destructive: 0 84.2% 60.2%;
+  --color-destructive-foreground: 0 0% 98%;
+
+  --color-border: 240 5.9% 90%;
+  --color-input: 240 5.9% 90%;
+  --color-ring: 240 5.9% 10%;
+
+  /* Radius tokens */
+  --radius-default: 1rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+}
+
+/* Dark mode token overrides */
+.dark {
+  --color-background: 240 10% 3.9%;
+  --color-foreground: 0 0% 98%;
+
+  --color-card: 240 10% 3.9%;
+  --color-card-foreground: 0 0% 98%;
+
+  --color-popover: 240 10% 3.9%;
+  --color-popover-foreground: 0 0% 98%;
+
+  --color-primary: 234 100% 70%;
+  --color-primary-foreground: 0 0% 100%;
+
+  --color-secondary: 240 3.7% 15.9%;
+  --color-secondary-foreground: 0 0% 98%;
+
+  --color-muted: 240 3.7% 15.9%;
+  --color-muted-foreground: 240 5% 64.9%;
+
+  --color-accent: 240 3.7% 15.9%;
+  --color-accent-foreground: 0 0% 98%;
+
+  --color-destructive: 0 72.2% 50.6%;
+  --color-destructive-foreground: 0 0% 98%;
+
+  --color-border: 240 3.7% 15.9%;
+  --color-input: 240 3.7% 15.9%;
+  --color-ring: 234 100% 70%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  
+  h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  
+  h5 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  
+  h6 {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  
+  p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+}
+
+@layer utilities {
+  .gradient-bg {
+    background: linear-gradient(135deg, #5B6CFF 0%, #7F7FD5 50%, #FF8A00 100%);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, #5B6CFF 0%, #7F7FD5 50%, #FF8A00 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .glass-card-light {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .dark .glass-card-light {
+    background: rgba(30, 30, 40, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
